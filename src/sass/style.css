@@ -45,7 +45,7 @@ select {
 }
 
 body {
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -105,17 +105,42 @@ main .container-timer .timer-progressbar {
   width: 300px;
   height: 300px;
   letter-spacing: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .container-timer .timer-progressbar .timer {
-  border: 1px solid red;
+  width: 100%;
+  font-size: 60px;
+  -webkit-font-feature-settings: "lnum";
+          font-feature-settings: "lnum";
+}
+
+main .container-timer .timer-progressbar .timer > div {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 60px;
-  text-align: center;
+}
+
+main .container-timer .timer-progressbar .timer .timer-mins {
+  left: 30%;
+}
+
+main .container-timer .timer-progressbar .timer .timer-secs {
+  left: 70%;
 }
 
 main .container-timer .timer-progressbar .timer-type {

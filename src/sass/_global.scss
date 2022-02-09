@@ -1,5 +1,6 @@
 body {
-  font-family: 'Kanit', sans-serif; 
+  // font-family: 'Cousine', monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -50,19 +51,27 @@ main {
       width: 300px;
       height: 300px;
       
-      
       letter-spacing: 5px;
 
+      @include flexCenter();
+
       .timer {
-        border: 1px solid red;
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
+        // border: 1px solid red;
+        width: 100%;
         font-size: 60px;
-        text-align: center;
+        font-feature-settings: "lnum";
+
+        & > div {
+          @include absoluteCenter();
+        }
+
+        .timer-mins {
+          left: 30%;
+        }
+
+        .timer-secs {
+          left: 70%;
+        }
       }
 
       .timer-type {
