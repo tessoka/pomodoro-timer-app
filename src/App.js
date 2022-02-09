@@ -1,11 +1,20 @@
+import Timer from './components/Timer'
+
 
 
 
 function App() {
   return (
     <div className="App">
+      <header>
+        <div>The RocketLab</div>
+      </header>
       <main>
-        Hello
+        <Timer />
+        
+        <div className="container-tasks">
+
+        </div>
       </main>
     </div>
   );

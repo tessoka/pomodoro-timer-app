@@ -45,13 +45,100 @@ select {
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Kanit', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+#root {
+  background-color: #f1f5fb;
+}
+
+.App {
+  border: 1px solid purple;
+  height: 100vh;
+  max-width: 600px;
+  min-width: 360px;
+  margin: 0 auto;
+  color: #f1f5fb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+header {
+  background: -webkit-gradient(linear, left top, right top, color-stop(45%, #0f131f), to(#324e7b));
+  background: linear-gradient(90deg, #0f131f 45%, #324e7b);
+  height: 75px;
+}
+
+main {
+  height: 100%;
+}
+
+main .container-timer {
+  background-color: #5068a9;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .container-timer .timer-progressbar {
+  border: 10px solid #f41361;
+  border-radius: 50%;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  letter-spacing: 5px;
+}
+
+main .container-timer .timer-progressbar .timer {
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 60px;
+  text-align: center;
+}
+
+main .container-timer .timer-progressbar .timer-type {
+  border: 1px solid red;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.btn {
+  background-color: #f1f5fb;
+  width: 125px;
+  padding: 10px 15px;
+  color: #0f131f;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn:hover {
+  background-color: #f41361;
 }
 /*# sourceMappingURL=style.css.map */
