@@ -1,4 +1,5 @@
 import Timer from './components/Timer'
+import Header from './components/Header'
 
 
 
@@ -6,12 +7,10 @@ import Timer from './components/Timer'
 function App() {
   return (
     <div className="App">
-      <header>
-        <div>The RocketLab</div>
-      </header>
+      <Header />
       <main>
         <Timer />
-        
+
         <div className="container-tasks">
 
         </div>

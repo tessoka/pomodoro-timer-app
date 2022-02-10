@@ -17,10 +17,12 @@ const Timer = () => {
     let secs = timeLeft - (mins * 60)
     if (mins < 10) mins = "0" + mins.toString()
     if (secs < 10) secs = "0" + secs.toString()
+    console.log(displayTime)
     setDisplayTime({mins, secs})
   }
 
   useEffect(() => {
+    calculateDisplayTime()
     if (isRunning && timeLeft !== 0) {
       setTimeout(() => {
         setTimeLeft(timeLeft-1)
@@ -30,8 +32,6 @@ const Timer = () => {
       setIsRunning(false)
     }
 
-    calculateDisplayTime()
-    console.log(displayTime)
 
   }, [timeLeft])
 

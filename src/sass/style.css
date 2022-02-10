@@ -53,7 +53,6 @@ body {
 }
 
 .App {
-  border: 1px solid purple;
   height: 100vh;
   max-width: 600px;
   min-width: 360px;
@@ -66,12 +65,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-header {
-  background: -webkit-gradient(linear, left top, right top, color-stop(45%, #0f131f), to(#324e7b));
-  background: linear-gradient(90deg, #0f131f 45%, #324e7b);
-  height: 75px;
+  gap: 10px;
 }
 
 main {
@@ -79,7 +73,7 @@ main {
 }
 
 main .container-timer {
-  background-color: #5068a9;
+  background: linear-gradient(120deg, #0f131f 10%, #5068a9 60%);
   height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,5 +159,53 @@ main .container-timer .timer-progressbar .timer-type {
 
 .btn:hover {
   background-color: #f41361;
+}
+
+header {
+  background: -webkit-gradient(linear, left top, right top, color-stop(25%, #0f131f), color-stop(88%, #5068a9));
+  background: linear-gradient(90deg, #0f131f 25%, #5068a9 88%);
+  height: 75px;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .logo-settings {
+  background-color: #f1f5fb;
+  position: relative;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+header .logo-settings:hover {
+  background-color: #f41361;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+header .logo-settings:hover svg {
+  color: #192136;
+}
+
+header .logo-settings svg {
+  height: 35px;
+  color: #192136;
+  fill: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */
