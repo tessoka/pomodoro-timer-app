@@ -1,3 +1,12 @@
+* {
+  &::-moz-selection {
+    background: $secondaryColor-1;
+  }
+  &::selection {
+    background: $secondaryColor-1;
+  }
+}
+
 body {
   // font-family: 'Cousine', monospace;
   font-family: 'Montserrat', sans-serif;
@@ -26,13 +35,19 @@ body {
 
 main {
   // border: 1px solid steelblue;
+  position: relative;
   height: 100%;
+
+  .container-middle {
+    // border: 1px solid $secondaryColor-1;
+    background: linear-gradient(120deg, $primaryColor-6 10%, $primaryColor-3 60%);
+    height: 50vh;
+  }
 
   .container-timer {
     // border: 1px solid red;
     // background-color: $primaryColor-3;
-    background: linear-gradient(120deg, $primaryColor-6 10%, $primaryColor-3 60%);
-    height: 50vh;
+    height: 100%;
 
     @include flexCenter();
     justify-content: space-around;

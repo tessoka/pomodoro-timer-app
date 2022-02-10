@@ -1,15 +1,9 @@
-import React, { useState } from 'react'
-import {SettingsLogo} from '../svg/svg-d-texts.js'
-
-const Header = () => {
-
-  const [ isSettingsOpen, setIsSettingsOpen ] = useState(false)
+import React from 'react'
+import { SettingsLogo } from '../svg/svg-d-texts.js'
 
 
-  const handleClickOnSettings = () => {
-    setIsSettingsOpen(!isSettingsOpen)
-    console.log("settings clicked")
-  }
+
+const Header = ({handleClickOnSettings}) => {
 
   return (
     <header>

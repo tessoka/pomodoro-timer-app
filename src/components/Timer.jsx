@@ -6,24 +6,36 @@ const Timer = () => {
   const [ timeLeft, setTimeLeft ] = useState(130)
   const [ displayTime, setDisplayTime ] = useState({})
 
+  
   const handleClickStart = () => {
-    if (!isRunning) setTimeLeft(timeLeft - 1)
+    if (!isRunning) setTimeLeft(timeLeft * 1.0000001)
     setIsRunning(!isRunning)
+    console.log("timeLeft:")
+    console.log(timeLeft)
     console.log("clicked")
   }
-
+  
   const calculateDisplayTime = () => {
     let mins = Math.floor(timeLeft / 60)
-    let secs = timeLeft - (mins * 60)
+    let secs = Math.floor(timeLeft - (mins * 60))
     if (mins < 10) mins = "0" + mins.toString()
     if (secs < 10) secs = "0" + secs.toString()
-    console.log(displayTime)
+    // console.log(displayTime)
     setDisplayTime({mins, secs})
   }
 
+
+  
   useEffect(() => {
+    console.log("default useeffect initiated")
+    console.log(timeLeft)
     calculateDisplayTime()
+  }, [])
+  
+  useEffect(() => {
+    document.title = displayTime.mins + ":" + displayTime.secs
     if (isRunning && timeLeft !== 0) {
+      calculateDisplayTime()
       setTimeout(() => {
         setTimeLeft(timeLeft-1)
       }, 1000)

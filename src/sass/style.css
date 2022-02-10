@@ -44,6 +44,14 @@ select {
   border-radius: 0;
 }
 
+*::-moz-selection {
+  background: #f41361;
+}
+
+*::selection {
+  background: #f41361;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
@@ -69,12 +77,17 @@ body {
 }
 
 main {
+  position: relative;
   height: 100%;
 }
 
-main .container-timer {
+main .container-middle {
   background: linear-gradient(120deg, #0f131f 10%, #5068a9 60%);
   height: 50vh;
+}
+
+main .container-timer {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,5 +220,107 @@ header .logo-settings svg {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.modal-settings {
+  height: 100%;
+  padding: 25px;
+  color: #f1f5fb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.modal-settings p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.modal-settings > div {
+  width: 250px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal-settings > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.modal-settings > div > div p {
+  font-size: 12px;
+}
+
+.modal-settings > div > div .val {
+  border: 1px solid #0f131f;
+  background-color: #324e7b;
+  border-radius: 5px;
+  width: 70px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.modal-settings > div button {
+  background-color: #f1f5fb;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 32px;
+  color: #0f131f;
+}
+
+.modal-settings > div button:hover {
+  background-color: #f41361;
+}
+
+.modal-settings input {
+  background-color: #f1f5fb;
+  width: 60px;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */
