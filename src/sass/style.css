@@ -87,7 +87,6 @@ main .container-middle {
 }
 
 main .container-mid {
-  border: 1px solid red;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,8 +130,6 @@ main .container-mid .timer-progressbar {
 main .container-mid .timer-progressbar .timer {
   width: 100%;
   font-size: 60px;
-  -webkit-font-feature-settings: "lnum";
-          font-feature-settings: "lnum";
 }
 
 main .container-mid .timer-progressbar .timer > div {
@@ -157,8 +154,8 @@ main .container-mid .timer-progressbar .timer-type {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  border: 1px solid #0f131f;
-  background-color: #324e7b;
+  border: 1px solid rgba(15, 19, 31, 0.5);
+  background-color: rgba(50, 78, 123, 0.5);
   border-radius: 5px;
   padding: 0 15px;
   height: 25px;
@@ -194,7 +191,6 @@ main .container-mid .timer-progressbar .timer-type {
 }
 
 .container-mid-top {
-  border: 1px solid greenyellow;
   height: 75px;
   width: 100%;
   display: -webkit-box;
@@ -225,8 +221,13 @@ main .container-mid .timer-progressbar .timer-type {
   border: 1px solid #f41361;
 }
 
+.container-mid-top button:disabled {
+  background-color: rgba(241, 245, 251, 0.05);
+  color: rgba(241, 245, 251, 0.2);
+  cursor: default;
+}
+
 .container-mid-mid {
-  border: 1px solid gold;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -247,7 +248,6 @@ main .container-mid .timer-progressbar .timer-type {
 }
 
 .container-mid-bot {
-  border: 1px solid red;
   height: 75px;
   width: 100%;
   display: -webkit-box;

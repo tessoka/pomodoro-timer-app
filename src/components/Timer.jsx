@@ -65,9 +65,9 @@ const Timer = () => {
   return (
     <div className="container-mid">
       <div className="container-mid-top">
-        <button onClick={(e) => handleClickType(e)}>Focus</button>
-        <button onClick={(e) => handleClickType(e)}>Short Break</button>
-        <button onClick={(e) => handleClickType(e)}>Long Break</button>
+        <button disabled={isRunning} onClick={(e) => handleClickType(e)}>Focus</button>
+        <button disabled={isRunning} onClick={(e) => handleClickType(e)}>Short Break</button>
+        <button disabled={isRunning} onClick={(e) => handleClickType(e)}>Long Break</button>
       </div>
       <div className="container-mid-mid">
         <div className="timer-progressbar">
