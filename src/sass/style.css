@@ -86,7 +86,8 @@ main .container-middle {
   height: 50vh;
 }
 
-main .container-timer {
+main .container-mid {
+  border: 1px solid red;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -105,7 +106,7 @@ main .container-timer {
       justify-content: space-around;
 }
 
-main .container-timer .timer-progressbar {
+main .container-mid .timer-progressbar {
   border: 10px solid #f41361;
   border-radius: 50%;
   position: relative;
@@ -127,14 +128,14 @@ main .container-timer .timer-progressbar {
           align-items: center;
 }
 
-main .container-timer .timer-progressbar .timer {
+main .container-mid .timer-progressbar .timer {
   width: 100%;
   font-size: 60px;
   -webkit-font-feature-settings: "lnum";
           font-feature-settings: "lnum";
 }
 
-main .container-timer .timer-progressbar .timer > div {
+main .container-mid .timer-progressbar .timer > div {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -142,22 +143,40 @@ main .container-timer .timer-progressbar .timer > div {
           transform: translate(-50%, -50%);
 }
 
-main .container-timer .timer-progressbar .timer .timer-mins {
+main .container-mid .timer-progressbar .timer .timer-mins {
   left: 30%;
 }
 
-main .container-timer .timer-progressbar .timer .timer-secs {
+main .container-mid .timer-progressbar .timer .timer-secs {
   left: 70%;
 }
 
-main .container-timer .timer-progressbar .timer-type {
-  border: 1px solid red;
+main .container-mid .timer-progressbar .timer-type {
   position: absolute;
   top: 80%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 18px;
+  border: 1px solid #0f131f;
+  background-color: #324e7b;
+  border-radius: 5px;
+  padding: 0 15px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 1px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -172,6 +191,78 @@ main .container-timer .timer-progressbar .timer-type {
 
 .btn:hover {
   background-color: #f41361;
+}
+
+.container-mid-top {
+  border: 1px solid greenyellow;
+  height: 75px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 25px;
+}
+
+.container-mid-top button {
+  background-color: rgba(241, 245, 251, 0.2);
+  border-radius: 5px;
+  width: 125px;
+  height: 30px;
+}
+
+.container-mid-top button:hover {
+  background-color: #f41361;
+  color: #0f131f;
+}
+
+.container-mid-top button:focus {
+  border: 1px solid #f41361;
+}
+
+.container-mid-mid {
+  border: 1px solid gold;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-mid-bot {
+  border: 1px solid red;
+  height: 75px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header {
@@ -222,32 +313,12 @@ header .logo-settings svg {
           transform: translate(-50%, -50%);
 }
 
-.modal-settings {
-  height: 100%;
-  padding: 25px;
-  color: #f1f5fb;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 20px;
-}
-
 .modal-settings p {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.modal-settings > div {
+.modal-settings > div > div {
   width: 250px;
   height: 60px;
   display: -webkit-box;
@@ -261,7 +332,7 @@ header .logo-settings svg {
           justify-content: space-between;
 }
 
-.modal-settings > div > div {
+.modal-settings > div > div > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,11 +349,11 @@ header .logo-settings svg {
   gap: 5px;
 }
 
-.modal-settings > div > div p {
+.modal-settings > div > div > div p {
   font-size: 12px;
 }
 
-.modal-settings > div > div .val {
+.modal-settings > div > div > div .val {
   border: 1px solid #0f131f;
   background-color: #324e7b;
   border-radius: 5px;
@@ -305,7 +376,7 @@ header .logo-settings svg {
   font-size: 14px;
 }
 
-.modal-settings > div button {
+.modal-settings > div > div button {
   background-color: #f1f5fb;
   border-radius: 50%;
   height: 40px;
@@ -314,13 +385,7 @@ header .logo-settings svg {
   color: #0f131f;
 }
 
-.modal-settings > div button:hover {
+.modal-settings > div > div button:hover {
   background-color: #f41361;
-}
-
-.modal-settings input {
-  background-color: #f1f5fb;
-  width: 60px;
-  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import Timer from './components/Timer'
+import React, { useState, useEffect, Suspense } from 'react'
+// import Timer from './components/Timer'
 import Header from './components/Header'
 import Settings from './components/Settings'
 import { SettingsContext } from './utilities/Context'
 
+const Timer = React.lazy(() => import('./components/Timer'))
 
 
 
@@ -35,7 +36,9 @@ function App() {
               isSettingsOpen ?
               <Settings />
               :
-              <Timer />
+              <Suspense fallback={<div>Loading...</div>}>
+                <Timer />
+              </Suspense>
             }
           </div>
 

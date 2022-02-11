@@ -44,8 +44,8 @@ main {
     height: 50vh;
   }
 
-  .container-timer {
-    // border: 1px solid red;
+  .container-mid {
+    border: 1px solid red;
     // background-color: $primaryColor-3;
     height: 100%;
 
@@ -85,16 +85,22 @@ main {
       }
 
       .timer-type {
-        border: 1px solid red;
-
         position: absolute;
         top: 80%;
         left: 50%;
-        transform: translate(-50%, -50%);
-
-        font-size: 18px;
-        text-transform: uppercase;
+        transform: translate(-50%, -50%);     
         
+        border: 1px solid $primaryColor-6;
+        // border: 1px solid $secondaryColor-1;
+        background-color: $primaryColor-4;
+        border-radius: 5px;
+        padding: 0 15px;
+        height: 25px;
+        @include flexCenter();
+      
+        letter-spacing: 1px;
+        font-size: 12px;
+        text-transform: uppercase;
       }
     }
   }
@@ -114,6 +120,51 @@ main {
     background-color: $secondaryColor-1;
   }
 }
+
+.container-mid-top {
+  border: 1px solid greenyellow;
+  height: 75px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  & button {
+    background-color: rgba($primaryColor-1, .2);
+    border-radius: 5px;
+    width: 125px;
+    height: 30px;
+
+    &:hover {
+      background-color: $secondaryColor-1;
+      color: $primaryColor-6;
+    }
+    
+    &:focus {
+      border: 1px solid $secondaryColor-1;
+    }
+  }
+}
+
+.container-mid-mid {
+  border: 1px solid gold;
+  flex: 1;
+  width: 100%;
+  
+  @include flexCenter();
+}
+
+.container-mid-bot {
+  border: 1px solid red;
+  height: 75px;
+  width: 100%;
+  
+  @include flexCenter();
+}
+
+
 
 
 

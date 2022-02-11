@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { SettingsContext } from '../utilities/Context'
 
 const Settings = () => {
 
-  const { currentSettings } = useContext(SettingsContext)
+  const { currentSettings, setCurrentSettings } = useContext(SettingsContext)
 
   const [ workTime, setWorkTime ] = useState(currentSettings.workTime)
   const [ shortBreakTime, setShortBreakTime ] = useState(currentSettings.shortBreakTime)
@@ -17,11 +17,14 @@ const Settings = () => {
     setRounds(3)
   }
 
+  useEffect(() => {
+    setNewLocalStoreData()
+  }, [workTime, shortBreakTime, longBreakTime, rounds])
+
   const setNewLocalStoreData = () => {
     localStorage.setItem("settings", `{"workTime": ${workTime}, "shortBreakTime": ${shortBreakTime}, "longBreakTime": ${longBreakTime}, "rounds": ${rounds}}`)
+    setCurrentSettings(JSON.parse(localStorage.getItem("settings")))
   }
-
-  setNewLocalStoreData()
 
   const handleClickWork = (e) => {
     if (e.target.innerText === "+") {
@@ -56,41 +59,47 @@ const Settings = () => {
   }
 
   return (
-    <div className="modal-settings">
-      <p>Timer Settings</p>
-      <div className="box-work">
-        <button onClick={(e) => handleClickWork(e)}>-</button>
-        <div className="box-mid">
-          <p>Work</p>
-          <div className="val">{workTime}:00</div>
-        </div>
-        <button onClick={(e) => handleClickWork(e)}>+</button>
+    <div className="container-mid modal-settings">
+      <div className="container-mid-top">
+        <p>Timer Settings</p>
       </div>
-      <div className="box-sbreak">
-        <button onClick={(e) => handleClickShortBreak(e)}>-</button>
-        <div className="box-mid">
-          <p>Short Break</p>
-          <div className="val">{shortBreakTime}:00</div>
+      <div className="container-mid-mid">
+        <div className="box-work">
+          <button onClick={(e) => handleClickWork(e)}>-</button>
+          <div className="box-mid">
+            <p>Focus</p>
+            <div className="val">{workTime}:00</div>
+          </div>
+          <button onClick={(e) => handleClickWork(e)}>+</button>
         </div>
-        <button onClick={(e) => handleClickShortBreak(e)}>+</button>
-      </div>
-      <div className="box-lbreak">
-      <button onClick={(e) => handleClickLongBreak(e)}>-</button>
-        <div className="box-mid">
-          <p>Long Break</p>
-          <div className="val">{longBreakTime}:00</div>
+        <div className="box-sbreak">
+          <button onClick={(e) => handleClickShortBreak(e)}>-</button>
+          <div className="box-mid">
+            <p>Short Break</p>
+            <div className="val">{shortBreakTime}:00</div>
+          </div>
+          <button onClick={(e) => handleClickShortBreak(e)}>+</button>
         </div>
-        <button onClick={(e) => handleClickLongBreak(e)}>+</button>
-      </div>
-      <div className="box-rounds">
-        <button onClick={(e) => handleClickRounds(e)}>-</button>
-        <div className="box-mid">
-          <p>Rounds</p>
-          <div className="val">{rounds}</div>
+        <div className="box-lbreak">
+        <button onClick={(e) => handleClickLongBreak(e)}>-</button>
+          <div className="box-mid">
+            <p>Long Break</p>
+            <div className="val">{longBreakTime}:00</div>
+          </div>
+          <button onClick={(e) => handleClickLongBreak(e)}>+</button>
         </div>
-        <button onClick={(e) => handleClickRounds(e)}>+</button>
+        <div className="box-rounds">
+          <button onClick={(e) => handleClickRounds(e)}>-</button>
+          <div className="box-mid">
+            <p>Rounds</p>
+            <div className="val">{rounds}</div>
+          </div>
+          <button onClick={(e) => handleClickRounds(e)}>+</button>
+        </div>
       </div>
-      <button className="btn" onClick={handleClickReset}>Reset</button>
+      <div className="container-mid-bot">
+        <button className="btn" onClick={handleClickReset}>Reset</button>
+      </div>
     </div>
   )
 }

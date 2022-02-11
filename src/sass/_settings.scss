@@ -1,23 +1,12 @@
 .modal-settings {
-  // border: 1px solid red;
-  // background-color: $primaryColor-3;
-
-  height: 100%;
-
-  padding: 25px;
-
-  color: $primaryColor-1;
-
-  @include flexCenter();
-  gap: 20px;
-
+ 
   p {
     // font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
   
-  &> div {
+  &> div > div {
     // border: 1px solid red;
     width: 250px;
     height: 60px;
@@ -42,7 +31,7 @@
         width: 70px;
         height: 25px;
         @include flexCenter();
-
+      
         letter-spacing: 1px;
         font-size: 14px;
       }
@@ -66,12 +55,5 @@
 
       }
     }
-  }
-
-
-  input {
-    background-color: $primaryColor-1;
-    width: 60px;
-    padding: 10px;
   }
 }
