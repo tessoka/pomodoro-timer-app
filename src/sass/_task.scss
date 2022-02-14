@@ -1,11 +1,11 @@
 .task-box {
-  // border: 1px solid red;
   background-color: rgba($primaryColor-1, .2);
-  // border: 1px solid $primaryColor-1;
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  // border-radius: 5px;
+
+  position: relative;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,10 +56,12 @@
     // border: 1px solid blue;
     height: 100%;
     width: 25px;
+    // margin-right: 45px;
     @include flexCenter();
   }
 
   .task-del {
+    // border: 1px solid red;
     background-color: $primaryColor-1;
     border-radius: 50%;
 

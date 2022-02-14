@@ -10,16 +10,17 @@
 body {
   // font-family: 'Cousine', monospace;
   font-family: 'Montserrat', sans-serif;
+  background-color: $primaryColor-1;
 }
 
 #root {
-  background-color: $primaryColor-1;
   --progress: 936;
 }
 
 .App {
   // border: 1px solid purple;
   
+  min-height: 100vh;
   height: 100vh;
   max-width: 600px;
   min-width: 360px;
@@ -116,6 +117,24 @@ main {
 }
 
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: $primaryColor-1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($primaryColor-3, .75); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($secondaryColor-1, .8); 
+}
 
 

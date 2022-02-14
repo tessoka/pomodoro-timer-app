@@ -15,7 +15,7 @@ const Tasks = () => {
       id = taskList[taskList.length-1].id+1
       active = false
     }
-    taskList.push({id: id, isActive: active, subject: "", runs: 0})
+    taskList.push({id: id, isActive: active, subject: "New Task", runs: 0})
     setTaskList([...taskList])
     localStorage.setItem("taskList", JSON.stringify([...taskList]))
   }
@@ -27,6 +27,14 @@ const Tasks = () => {
 
   const deleteTask = (task) => {
     taskList = taskList.filter(taskObj => taskObj !== task)
+    console.log("del was kicked off")
+    updateTask()
+  }
+
+  const activateTask = (task) => {
+    if (taskList.length > 1) taskList.forEach(taskObj => taskObj.isActive = false)
+    task.isActive = true
+    console.log("activate was kicked off")
     updateTask()
   }
 
@@ -46,10 +54,10 @@ const Tasks = () => {
     <div className="tasks-box">
 
       <div className="tasks-header">
-        Tasks
+        <p>Tasks</p>
       </div>
       <div className="task-list">
-        { taskList.map(task => <Task key={task.id} task={task} updateTask={updateTask} deleteTask={deleteTask} />) }
+        { taskList.map(task => <Task key={task.id} task={task} updateTask={updateTask} deleteTask={deleteTask} activateTask ={activateTask} />) }
       </div>
 
       <button className="btn" onClick={handleClickAdd}>Add Task</button>

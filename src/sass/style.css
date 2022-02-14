@@ -54,14 +54,15 @@ select {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #f1f5fb;
 }
 
 #root {
-  background-color: #f1f5fb;
   --progress: 936;
 }
 
 .App {
+  min-height: 100vh;
   height: 100vh;
   max-width: 600px;
   min-width: 360px;
@@ -183,6 +184,26 @@ main .container-middle {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f5fb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(80, 104, 169, 0.75);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 19, 97, 0.8);
 }
 
 header {
@@ -357,6 +378,11 @@ header .logo-settings svg {
           align-items: center;
 }
 
+.container-tasks .tasks-box .tasks-header p {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .container-tasks .tasks-box .task-list {
   width: 450px;
   display: -webkit-box;
@@ -384,6 +410,7 @@ header .logo-settings svg {
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
