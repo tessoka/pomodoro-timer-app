@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { SettingsContext } from '../utilities/Context'
+import AlarmTone from '../mp3/never.mp3'
+
 
 const Timer = () => {
 
@@ -7,9 +9,13 @@ const Timer = () => {
 
   const [ isRunning, setIsRunning ] = useState(false)
   const [ timeLeft, setTimeLeft ] = useState(currentSettings.workTime * 60)
+  const [ selectedTime, setSelectedTime ] = useState(currentSettings.workTime * 60)
   const [ displayTime, setDisplayTime ] = useState({})
   const [ selectedType, setSelectedType ] = useState("Focus")
+  const [ typeClicked, setTypeClicked ] = useState(true)
   const [ refreshDisplayTime, setRefreshDisplayTime ] = useState(false)
+  const r = document.querySelector('#pb')
+  const [ progressValue, setProgressValue ] = useState(936)
 
   
   const calculateDisplayTime = () => {
@@ -20,32 +26,48 @@ const Timer = () => {
     // console.log(displayTime)
     setRefreshDisplayTime(!refreshDisplayTime)
     setDisplayTime({mins, secs})
+    document.title = mins + ":" + secs + " - " + selectedType
   }
 
-  const handleClickType = (e) => {
-    console.log("CLICKED ON CHANGE")
-    setSelectedType(e.target.innerText)
-    console.log(currentSettings)
-    if (e.target.innerText === "Focus") setTimeLeft(currentSettings.workTime * 60)
-    if (e.target.innerText === "Short Break") setTimeLeft(currentSettings.shortBreakTime * 60)
-    if (e.target.innerText === "Long Break") setTimeLeft(currentSettings.longBreakTime * 60)
+  const handleClickType = (value) => {
+    setSelectedType(value)
+    setTypeClicked(!typeClicked)
+    setProgressValue(936)
+    r.style.setProperty('--progress', 936)
+
+    if (value === "Focus") {
+      setTimeLeft(currentSettings.workTime * 60)
+      setSelectedTime(currentSettings.workTime * 60)
+    }
+    if (value === "Short Break") {
+      setTimeLeft(currentSettings.shortBreakTime * 60 * 0.25)
+      setSelectedTime(currentSettings.shortBreakTime * 60 * 0.25)
+    }
+    if (value === "Long Break") {
+      setTimeLeft(currentSettings.longBreakTime * 60)
+      setSelectedTime(currentSettings.longBreakTime * 60)
+    }
     if (isRunning) setIsRunning(false)
-    console.log(timeLeft)
   }
 
   const handleClickStart = () => {
     if (!isRunning) setTimeLeft(timeLeft * 1.00000000001)
     setIsRunning(!isRunning)
     calculateDisplayTime()
-    console.log("timeLeft:")
-    console.log(timeLeft)
-    console.log("clicked")
   }
   
+  
   useEffect(() => {
-    document.title = displayTime.mins + ":" + displayTime.secs
+
+    console.log("timeLeft")
     console.log(timeLeft)
-    if (isRunning && timeLeft !== 0) {
+    console.log("progressValue")
+    console.log(progressValue)
+    if (isRunning && timeLeft > 0) {
+      // let progressVal = (936 - (936 / selectedTime * (selectedTime - timeLeft)))
+      setProgressValue((936 - (936 / selectedTime * (selectedTime - timeLeft + 1))))
+      r.style.setProperty('--progress', progressValue)
+
       calculateDisplayTime()
       setTimeout(() => {
         setTimeLeft(timeLeft-1)
@@ -53,21 +75,30 @@ const Timer = () => {
     } else {
       console.log("end of count down")
       setIsRunning(false)
+      if (timeLeft <= 0) {
+        new Audio(AlarmTone).play()
+        if (selectedType !== "Focus") {
+          handleClickType("Focus")
+        }
+        if (selectedType === "Focus") {
+          handleClickType("Short Break")
+        }
+      }
     }
   }, [timeLeft])
 
+
+
   useEffect(() => {
-    console.log("DEFAULT useEffect INITIATED")
-    console.log(timeLeft)
     calculateDisplayTime()
-  }, [selectedType])
+  }, [typeClicked])
 
   return (
     <div className="container-mid">
       <div className="container-mid-top">
-        <button disabled={isRunning} onClick={(e) => handleClickType(e)}>Focus</button>
-        <button disabled={isRunning} onClick={(e) => handleClickType(e)}>Short Break</button>
-        <button disabled={isRunning} onClick={(e) => handleClickType(e)}>Long Break</button>
+        <button disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Focus</button>
+        <button disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Short Break</button>
+        <button disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Long Break</button>
       </div>
       <div className="container-mid-mid">
         <div className="timer-progressbar">
@@ -79,6 +110,13 @@ const Timer = () => {
           <div className="timer-type val">
             {selectedType}
           </div>
+
+          <div className="progress-bar">
+            <svg>
+              <circle id="pb" cx="155" cy="155" r="149" strokeLinecap="round"/>
+            </svg>
+          </div>
+
         </div>
       </div>
       <div className="container-mid-bot">

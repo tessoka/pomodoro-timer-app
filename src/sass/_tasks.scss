@@ -1,0 +1,8 @@
+.container-tasks {
+  border: 1px solid red;
+  background-color: steelblue;
+  flex: 1;
+
+  @include flexCenter();
+
+}

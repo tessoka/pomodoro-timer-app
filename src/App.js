@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react'
 // import Timer from './components/Timer'
 import Header from './components/Header'
 import Settings from './components/Settings'
+import Tasks from './components/Tasks'
 import { SettingsContext } from './utilities/Context'
 
 const Timer = React.lazy(() => import('./components/Timer'))
@@ -43,7 +44,7 @@ function App() {
           </div>
 
           <div className="container-tasks">
-
+            <Tasks />
           </div>
 
         </main>

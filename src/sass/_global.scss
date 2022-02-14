@@ -14,7 +14,7 @@ body {
 
 #root {
   background-color: $primaryColor-1;
-
+  --progress: 936;
 }
 
 .App {
@@ -38,71 +38,14 @@ main {
   position: relative;
   height: 100%;
 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
   .container-middle {
     // border: 1px solid $secondaryColor-1;
     background: linear-gradient(120deg, $primaryColor-6 10%, $primaryColor-3 60%);
     height: 50vh;
-  }
-
-  .container-mid {
-    // border: 1px solid red;
-    // background-color: $primaryColor-3;
-    height: 100%;
-
-    @include flexCenter();
-    justify-content: space-around;
-
-    .timer-progressbar {
-      border: 10px solid $secondaryColor-1;
-      border-radius: 50%;
-
-      position: relative;
-
-      width: 300px;
-      height: 300px;
-      
-      letter-spacing: 5px;
-
-      @include flexCenter();
-
-      .timer {
-        // border: 1px solid red;
-        width: 100%;
-        font-size: 60px;
-        // font-feature-settings: "lnum";
-
-        & > div {
-          @include absoluteCenter();
-        }
-
-        .timer-mins {
-          left: 30%;
-        }
-
-        .timer-secs {
-          left: 70%;
-        }
-      }
-
-      .timer-type {
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);     
-
-        border: 1px solid rgba($primaryColor-6, .5);
-        // border: 1px solid $secondaryColor-1;
-        background-color: rgba($primaryColor-4, .5);
-        border-radius: 5px;
-        padding: 0 15px;
-        height: 25px;
-        @include flexCenter();
-      
-        letter-spacing: 1px;
-        font-size: 12px;
-        text-transform: uppercase;
-      }
-    }
   }
 }
 
@@ -137,6 +80,8 @@ main {
     width: 125px;
     height: 30px;
 
+    transition: all .3s ease;
+    
     &:hover {
       background-color: $secondaryColor-1;
       color: $primaryColor-6;
@@ -145,12 +90,11 @@ main {
     &:focus {
       border: 1px solid $secondaryColor-1;
     }
-
+    
     &:disabled {
       background-color: rgba($primaryColor-1, .05);
       color: rgba($primaryColor-1, .2);
       cursor: default;
-
     }
   }
 }
