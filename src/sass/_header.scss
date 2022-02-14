@@ -3,7 +3,7 @@ header {
   // border: 1px solid orange;
   background: linear-gradient(90deg, $primaryColor-6 25%, $primaryColor-3 88%);
 
-  height: 75px;
+  min-height: 50px;
   padding: 0 10px;
 
   display: flex;
@@ -18,8 +18,8 @@ header {
     background-color: rgba($primaryColor-1, 1);
     position: relative;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 
     transition: all 1s ease;
     cursor: pointer;
@@ -34,7 +34,7 @@ header {
     }
     
     svg {
-      height: 35px;
+      height: 30px;
       color: $primaryColor-5;
       fill: transparent;
       @include absoluteCenter();

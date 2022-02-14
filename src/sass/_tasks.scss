@@ -1,8 +1,35 @@
 .container-tasks {
-  border: 1px solid red;
-  background-color: steelblue;
+  background: linear-gradient(120deg, rgb(42, 54, 88), $primaryColor-3 30%);
   flex: 1;
 
-  @include flexCenter();
+  // @include flexCenter();
 
+
+  .tasks-box {
+    // border: 1px solid red;
+    height: 100%;
+    width: 100%;
+    @include flexCenter();
+    justify-content: flex-start;
+    gap: 15px;
+
+    .tasks-header {
+      border-bottom: 2px dotted $primaryColor-1;
+      width: 450px;
+      height: 50px;
+      @include flexCenter();
+    }
+
+    .task-list {
+      // border: 1px solid greenyellow;
+      width: 450px;
+
+      @include flexCenter();
+      gap: 15px;
+    }
+
+    button {
+      margin-bottom: 15px;
+    }
+  }
 }

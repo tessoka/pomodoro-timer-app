@@ -188,7 +188,7 @@ main .container-middle {
 header {
   background: -webkit-gradient(linear, left top, right top, color-stop(25%, #0f131f), color-stop(88%, #5068a9));
   background: linear-gradient(90deg, #0f131f 25%, #5068a9 88%);
-  height: 75px;
+  min-height: 50px;
   padding: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,8 +205,8 @@ header .logo-settings {
   background-color: #f1f5fb;
   position: relative;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
   cursor: pointer;
@@ -223,7 +223,7 @@ header .logo-settings:hover svg {
 }
 
 header .logo-settings svg {
-  height: 35px;
+  height: 30px;
   color: #192136;
   fill: transparent;
   position: absolute;
@@ -310,11 +310,15 @@ header .logo-settings svg {
 }
 
 .container-tasks {
-  border: 1px solid red;
-  background-color: steelblue;
+  background: linear-gradient(120deg, #2a3658, #5068a9 30%);
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.container-tasks .tasks-box {
+  height: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -328,6 +332,161 @@ header .logo-settings svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 15px;
+}
+
+.container-tasks .tasks-box .tasks-header {
+  border-bottom: 2px dotted #f1f5fb;
+  width: 450px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-tasks .tasks-box .task-list {
+  width: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.container-tasks .tasks-box button {
+  margin-bottom: 15px;
+}
+
+.task-box {
+  background-color: rgba(241, 245, 251, 0.2);
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  color: #f1f5fb;
+  width: 100%;
+  height: 50px;
+  -webkit-transition: background-color .5s ease;
+  transition: background-color .5s ease;
+}
+
+.task-box:hover {
+  background-color: rgba(244, 19, 97, 0.2);
+}
+
+.task-box .task-status {
+  background-color: #f1f5fb;
+  height: 100%;
+  width: 5px;
+}
+
+.task-box .task-status.active {
+  background-color: #f41361;
+}
+
+.task-box .task-subject {
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task-box .task-subject input {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  color: inherit;
+  font-size: 24px;
+}
+
+.task-box .task-subject input:focus {
+  background-color: rgba(241, 245, 251, 0.75);
+  color: #0f131f;
+}
+
+.task-box .task-runs {
+  height: 100%;
+  width: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.task-box .task-del {
+  background-color: #f1f5fb;
+  border-radius: 50%;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.task-box .task-del:hover {
+  background-color: #f41361;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  border: none;
+}
+
+.task-box .task-del svg {
+  height: 25px;
+  fill: #0f131f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .container-mid {
