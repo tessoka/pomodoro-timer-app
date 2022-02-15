@@ -1,0 +1,43 @@
+
+header {
+  // border: 1px solid orange;
+  background: linear-gradient(90deg, $primaryColor-6 25%, $primaryColor-3 88%);
+
+  min-height: 50px;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+
+  
+  .logo-settings {
+    // border: 1px solid red;
+    background-color: rgba($primaryColor-1, 1);
+    position: relative;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
+    transition: all 1s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondaryColor-1;
+      transform: rotate(90deg);
+      
+      svg {
+        color: $primaryColor-5;
+      }
+    }
+    
+    svg {
+      height: 30px;
+      color: $primaryColor-5;
+      fill: transparent;
+      @include absoluteCenter();
+    }
+  }
+}

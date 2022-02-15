@@ -1,0 +1,140 @@
+* {
+  &::-moz-selection {
+    background: $secondaryColor-1;
+  }
+  &::selection {
+    background: $secondaryColor-1;
+  }
+}
+
+body {
+  // font-family: 'Cousine', monospace;
+  font-family: 'Montserrat', sans-serif;
+  background-color: $primaryColor-1;
+}
+
+#root {
+  --progress: 936;
+}
+
+.App {
+  // border: 1px solid purple;
+  
+  min-height: 100vh;
+  height: 100vh;
+  max-width: 600px;
+  min-width: 360px;
+
+  margin: 0 auto;
+
+  color: $primaryColor-1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+main {
+  // border: 1px solid steelblue;
+  position: relative;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .container-middle {
+    // border: 1px solid $secondaryColor-1;
+    background: linear-gradient(120deg, $primaryColor-6 10%, $primaryColor-3 60%);
+    height: 50vh;
+  }
+}
+
+.btn {
+  background-color: $primaryColor-1;
+
+  width: 125px;
+  padding: 10px 15px;
+
+  color: $primaryColor-6;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: $secondaryColor-1;
+  }
+}
+
+.container-mid-top {
+  // border: 1px solid greenyellow;
+  height: 75px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  & button {
+    background-color: rgba($primaryColor-1, .2);
+    border-radius: 5px;
+    width: 125px;
+    height: 30px;
+
+    transition: all .3s ease;
+    
+    &:hover {
+      background-color: $secondaryColor-1;
+      color: $primaryColor-6;
+    }
+    
+    &:focus {
+      border: 1px solid $secondaryColor-1;
+    }
+    
+    &:disabled {
+      background-color: rgba($primaryColor-1, .05);
+      color: rgba($primaryColor-1, .2);
+      cursor: default;
+    }
+  }
+}
+
+.container-mid-mid {
+  // border: 1px solid gold;
+  flex: 1;
+  width: 100%;
+  
+  @include flexCenter();
+}
+
+.container-mid-bot {
+  // border: 1px solid red;
+  height: 75px;
+  width: 100%;
+  
+  @include flexCenter();
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $primaryColor-1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($primaryColor-3, .75); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($secondaryColor-1, .8); 
+}
+
+
