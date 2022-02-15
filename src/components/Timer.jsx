@@ -60,6 +60,7 @@ const Timer = () => {
   const updateTask = () => {
     if (selectedType === "Focus") {
       let [task] = taskList.filter(taskObj => taskObj.isActive === true)
+      if (task === undefined) return
       task.runs = task.runs + 1
       setTaskList([...taskList])
       localStorage.setItem("taskList", JSON.stringify([...taskList]))
