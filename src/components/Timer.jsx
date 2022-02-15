@@ -37,12 +37,12 @@ const Timer = () => {
     r.style.setProperty('--progress', 936)
 
     if (value === "Focus") {
-      setTimeLeft(currentSettings.workTime * 60  * 0.15)
-      setSelectedTime(currentSettings.workTime * 60  * 0.15)
+      setTimeLeft(currentSettings.workTime * 60)
+      setSelectedTime(currentSettings.workTime * 60)
     }
     if (value === "Short Break") {
-      setTimeLeft(currentSettings.shortBreakTime * 60 * 0.1)
-      setSelectedTime(currentSettings.shortBreakTime * 60 * 0.1)
+      setTimeLeft(currentSettings.shortBreakTime * 60)
+      setSelectedTime(currentSettings.shortBreakTime * 60)
     }
     if (value === "Long Break") {
       setTimeLeft(currentSettings.longBreakTime * 60)
@@ -60,6 +60,7 @@ const Timer = () => {
   const updateTask = () => {
     if (selectedType === "Focus") {
       let [task] = taskList.filter(taskObj => taskObj.isActive === true)
+      if (task === undefined) return
       task.runs = task.runs + 1
       setTaskList([...taskList])
       localStorage.setItem("taskList", JSON.stringify([...taskList]))
@@ -68,11 +69,6 @@ const Timer = () => {
   
   
   useEffect(() => {
-
-    console.log("timeLeft")
-    console.log(timeLeft)
-    console.log("progressValue")
-    console.log(progressValue)
     if (isRunning && timeLeft > 0) {
       setProgressValue((936 - (936 / selectedTime * (selectedTime - timeLeft + 1))))
       r.style.setProperty('--progress', progressValue)
@@ -82,7 +78,6 @@ const Timer = () => {
         setTimeLeft(timeLeft-1)
       }, 1000)
     } else {
-      console.log("end of count down")
       setIsRunning(false)
       if (timeLeft <= 0) {
         new Audio(AlarmTone).play()

@@ -88,9 +88,9 @@ main {
       color: $primaryColor-6;
     }
     
-    &:focus {
-      border: 1px solid $secondaryColor-1;
-    }
+    // &:focus {
+    //   border: 1px solid $secondaryColor-1;
+    // }
     
     &:disabled {
       background-color: rgba($primaryColor-1, .05);
@@ -119,7 +119,7 @@ main {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Track */

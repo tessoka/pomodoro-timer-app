@@ -138,10 +138,6 @@ main .container-middle {
   color: #0f131f;
 }
 
-.container-mid-top button:focus {
-  border: 1px solid #f41361;
-}
-
 .container-mid-top button:disabled {
   background-color: rgba(241, 245, 251, 0.05);
   color: rgba(241, 245, 251, 0.2);
@@ -188,7 +184,7 @@ main .container-middle {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Track */
@@ -222,6 +218,35 @@ header {
           justify-content: space-between;
 }
 
+header .logo-box {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 15px;
+}
+
+header .logo-box svg {
+  fill: #f1f5fb;
+  height: 35px;
+  width: 35px;
+}
+
+header .logo-box p {
+  font-size: 20px;
+  pointer-events: none;
+}
+
+header .logo-box .small-the {
+  position: absolute;
+  font-size: 12px;
+  top: 0;
+  left: 55px;
+}
+
 header .logo-settings {
   background-color: #f1f5fb;
   position: relative;
@@ -245,7 +270,7 @@ header .logo-settings:hover svg {
 
 header .logo-settings svg {
   height: 30px;
-  color: #192136;
+  color: #0f131f;
   fill: transparent;
   position: absolute;
   top: 50%;
@@ -635,5 +660,103 @@ header .logo-settings svg {
   letter-spacing: 1px;
   font-size: 12px;
   text-transform: uppercase;
+}
+
+.container-colorpicker {
+  background-color: #0f131f;
+  border: 1px solid #f41361;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 25px;
+  z-index: 1;
+}
+
+.container-colorpicker .cp-colors {
+  border-color: inherit;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-colorpicker .cp-colors p {
+  width: calc(100% / 4);
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.container-colorpicker .cp-colors p.c1 {
+  background-color: #f1f5fb;
+  color: #0f131f;
+}
+
+.container-colorpicker .cp-colors p:nth-child(2) {
+  background-color: #0f131f;
+  color: #f1f5fb;
+}
+
+.container-colorpicker .cp-colors p:nth-child(3) {
+  background-color: #5068a9;
+  color: #f1f5fb;
+}
+
+.container-colorpicker .cp-colors p:nth-child(4) {
+  background-color: #f41361;
+  color: #0f131f;
+}
+
+.container-colorpicker .cp-sliders {
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.container-colorpicker .cp-sliders input {
+  width: 200px;
 }
 /*# sourceMappingURL=style.css.map */

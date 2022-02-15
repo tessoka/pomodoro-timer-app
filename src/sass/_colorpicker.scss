@@ -1,0 +1,63 @@
+.container-colorpicker {
+  background-color: $primaryColor-6;
+  border: 1px solid $secondaryColor-1;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 350px;
+
+  @include flexCenter();
+  justify-content: flex-start;
+  gap: 25px;
+
+  z-index: 1;
+
+  .cp-colors {
+    // border: 1px solid red;
+    border-color: inherit;
+    width: 100%;
+    display: flex;
+    
+    p {
+      width: calc(100% / 4);
+      height: 30px;
+
+      @include flexCenter();
+      font-size: 12px;
+      cursor: pointer;
+
+      &.c1 {
+        background-color: $primaryColor-1;
+        color: $primaryColor-6;
+      }
+
+      &:nth-child(2) {
+        background-color: $primaryColor-6;
+        color: $primaryColor-1;
+      }
+
+      &:nth-child(3) {
+        background-color: $primaryColor-3;
+        color: $primaryColor-1;
+      }
+
+      &:nth-child(4) {
+        background-color: $secondaryColor-1;
+        color: $primaryColor-6;
+      }
+    }
+  }
+
+  .cp-sliders {
+    border: 1px solid red;
+
+    @include flexCenter();
+    gap: 15px;
+
+    input {
+      width: 200px;
+    }
+  }
+}

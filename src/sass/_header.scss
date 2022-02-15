@@ -10,6 +10,33 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  .logo-box {
+    // border: 1px solid greenyellow;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    
+    svg {
+      // border: 1px solid red;
+      fill: $primaryColor-1;
+      height: 35px;
+      width: 35px;
+    }
+
+    p {
+      // border: 1px solid red;
+      font-size: 20px;
+      pointer-events: none;  
+    }
+    
+    .small-the {
+      position: absolute;
+      font-size: 12px;
+      top: 0;
+      left: 55px;
+    }
+  }
 
 
   
@@ -35,7 +62,7 @@ header {
     
     svg {
       height: 30px;
-      color: $primaryColor-5;
+      color: $primaryColor-6;
       fill: transparent;
       @include absoluteCenter();
     }
