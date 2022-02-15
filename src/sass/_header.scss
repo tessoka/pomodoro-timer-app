@@ -12,6 +12,7 @@ header {
 
   .logo-box {
     // border: 1px solid greenyellow;
+    position: relative;
     display: flex;
     align-items: flex-end;
     gap: 15px;
@@ -25,16 +26,15 @@ header {
 
     p {
       // border: 1px solid red;
-      position: relative;
       font-size: 20px;
-      pointer-events: none;
-      
-      .small-the {
-        position: absolute;
-        font-size: 12px;
-        top: -10px;
-        left: 5px;
-      }
+      pointer-events: none;  
+    }
+    
+    .small-the {
+      position: absolute;
+      font-size: 12px;
+      top: 0;
+      left: 55px;
     }
   }
 

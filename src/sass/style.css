@@ -184,7 +184,7 @@ main .container-middle {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 /* Track */
@@ -219,6 +219,7 @@ header {
 }
 
 header .logo-box {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,16 +236,15 @@ header .logo-box svg {
 }
 
 header .logo-box p {
-  position: relative;
   font-size: 20px;
   pointer-events: none;
 }
 
-header .logo-box p .small-the {
+header .logo-box .small-the {
   position: absolute;
   font-size: 12px;
-  top: -10px;
-  left: 5px;
+  top: 0;
+  left: 55px;
 }
 
 header .logo-settings {
