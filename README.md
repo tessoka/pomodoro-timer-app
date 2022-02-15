@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Pomodoro Timer App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+A pomodoro timer app to help you stay focused periodically and stops you from procrastinating or getting distracted.
 
-In the project directory, you can run:
+## Implementation
 
-### `npm start`
+- You can add and remove tasks
+- Active task can be set by clicking on it and it will be marked
+- In the settings menu you can set the length of focus and break periods, and also the number of rounds
+- Periods and tasks are stored in localStorage for imporve user experience
+- After 3 runs of "Focus" a Long Break will follow based on the counter stored in sessionStorage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech & Features
+- React.js
+- State handling & storing with useContext
+- Semantic HTML5 markup
+- Customizable run periods & ability to reset to default
+- Circular progressbar to represent visibility on timer
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Pending Developments
 
-### `npm test`
+- Smoother animations on some buttons and components
+- Customize the appearance with the ability to set colors
+- Restructure useStates to use objects
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Images
 
-### `npm run build`
+### Timer
+![pomodoro-timer-app](https://github.com/tessoka/pomodoro-timer-app/blob/32ba07cd454e4c00b48518a838174de2b23adb37/img/timer.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Settings
+![pomodoro-timer-app](https://github.com/tessoka/pomodoro-timer-app/blob/32ba07cd454e4c00b48518a838174de2b23adb37/img/settings.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tasks
+![pomodoro-timer-app](https://github.com/tessoka/pomodoro-timer-app/blob/32ba07cd454e4c00b48518a838174de2b23adb37/img/tasks.jpg)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Preview
+url...
