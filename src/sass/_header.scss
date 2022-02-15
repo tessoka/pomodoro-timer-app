@@ -10,6 +10,33 @@ header {
   align-items: center;
   justify-content: space-between;
 
+  .logo-box {
+    // border: 1px solid greenyellow;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    
+    svg {
+      // border: 1px solid red;
+      fill: $primaryColor-1;
+      height: 35px;
+      width: 35px;
+    }
+
+    p {
+      // border: 1px solid red;
+      position: relative;
+      font-size: 20px;
+      pointer-events: none;
+      
+      .small-the {
+        position: absolute;
+        font-size: 12px;
+        top: -10px;
+        left: 5px;
+      }
+    }
+  }
 
 
   

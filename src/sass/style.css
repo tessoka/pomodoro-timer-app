@@ -138,10 +138,6 @@ main .container-middle {
   color: #0f131f;
 }
 
-.container-mid-top button:focus {
-  border: 1px solid #f41361;
-}
-
 .container-mid-top button:disabled {
   background-color: rgba(241, 245, 251, 0.05);
   color: rgba(241, 245, 251, 0.2);
@@ -220,6 +216,35 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+header .logo-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 15px;
+}
+
+header .logo-box svg {
+  fill: #f1f5fb;
+  height: 35px;
+  width: 35px;
+}
+
+header .logo-box p {
+  position: relative;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+header .logo-box p .small-the {
+  position: absolute;
+  font-size: 12px;
+  top: -10px;
+  left: 5px;
 }
 
 header .logo-settings {

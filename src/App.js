@@ -35,7 +35,7 @@ function App() {
     <SettingsContext.Provider value={{ currentSettings, setCurrentSettings }}>
     <TaskListContext.Provider value={{ taskList, setTaskList }}>
       <div className="App">
-        {<ColorPicker />}
+        {/* <ColorPicker /> */}
         <Header handleClickOnSettings={handleClickOnSettings}/>
         <main>
           

@@ -88,9 +88,9 @@ main {
       color: $primaryColor-6;
     }
     
-    &:focus {
-      border: 1px solid $secondaryColor-1;
-    }
+    // &:focus {
+    //   border: 1px solid $secondaryColor-1;
+    // }
     
     &:disabled {
       background-color: rgba($primaryColor-1, .05);
