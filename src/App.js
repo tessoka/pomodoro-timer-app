@@ -3,7 +3,7 @@ import React, { useState, useEffect, Suspense, lazy } from 'react'
 import Header from './components/Header'
 import Settings from './components/Settings'
 import Tasks from './components/Tasks'
-import { SettingsContext } from './utilities/Context'
+import { SettingsContext, TaskListContext } from './utilities/Context'
 
 const Timer = lazy(() => import('./components/Timer'))
 
@@ -13,6 +13,7 @@ function App() {
 
   const [ isSettingsOpen, setIsSettingsOpen ] = useState(false)
   const [ currentSettings, setCurrentSettings ] = useState({})
+  let [taskList, setTaskList] = useState([])
 
   const handleClickOnSettings = () => {
     setIsSettingsOpen(!isSettingsOpen)
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <SettingsContext.Provider value={{ currentSettings, setCurrentSettings }}>
+    <TaskListContext.Provider value={{ taskList, setTaskList }}>
       <div className="App">
         <Header handleClickOnSettings={handleClickOnSettings}/>
         <main>
@@ -49,6 +51,7 @@ function App() {
 
         </main>
       </div>
+    </TaskListContext.Provider>
     </SettingsContext.Provider>
   );
 }

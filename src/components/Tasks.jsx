@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Task from './Task'
+import { SettingsContext, TaskListContext } from '../utilities/Context'
 
 const Tasks = () => {
-
-  let [taskList, setTaskList] = useState([])
+  
+  const { currentSettings, setCurrentSettings } = useContext(SettingsContext)
+  let { taskList, setTaskList } = useContext(TaskListContext)
 
   const handleClickAdd = () => {
     let id = 0
@@ -15,7 +17,7 @@ const Tasks = () => {
       id = taskList[taskList.length-1].id+1
       active = false
     }
-    taskList.push({id: id, isActive: active, subject: "New Task", runs: 0})
+    taskList.push({id: id, isActive: active, subject: "New Task", runs: 0, rounds: currentSettings.rounds})
     setTaskList([...taskList])
     localStorage.setItem("taskList", JSON.stringify([...taskList]))
   }

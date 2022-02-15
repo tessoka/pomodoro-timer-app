@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { SettingsContext } from '../utilities/Context'
+import { SettingsContext, TaskListContext } from '../utilities/Context'
 import AlarmTone from '../mp3/never.mp3'
 
 
 const Timer = () => {
 
   const { currentSettings, setCurrentSettings } = useContext(SettingsContext)
+  let { taskList, setTaskList } = useContext(TaskListContext)
 
   const [ isRunning, setIsRunning ] = useState(false)
   const [ timeLeft, setTimeLeft ] = useState(currentSettings.workTime * 60)
@@ -36,12 +37,12 @@ const Timer = () => {
     r.style.setProperty('--progress', 936)
 
     if (value === "Focus") {
-      setTimeLeft(currentSettings.workTime * 60)
-      setSelectedTime(currentSettings.workTime * 60)
+      setTimeLeft(currentSettings.workTime * 60  * 0.15)
+      setSelectedTime(currentSettings.workTime * 60  * 0.15)
     }
     if (value === "Short Break") {
-      setTimeLeft(currentSettings.shortBreakTime * 60 * 0.25)
-      setSelectedTime(currentSettings.shortBreakTime * 60 * 0.25)
+      setTimeLeft(currentSettings.shortBreakTime * 60 * 0.1)
+      setSelectedTime(currentSettings.shortBreakTime * 60 * 0.1)
     }
     if (value === "Long Break") {
       setTimeLeft(currentSettings.longBreakTime * 60)
@@ -55,6 +56,15 @@ const Timer = () => {
     setIsRunning(!isRunning)
     calculateDisplayTime()
   }
+
+  const updateTask = () => {
+    if (selectedType === "Focus") {
+      let [task] = taskList.filter(taskObj => taskObj.isActive === true)
+      task.runs = task.runs + 1
+      setTaskList([...taskList])
+      localStorage.setItem("taskList", JSON.stringify([...taskList]))
+    }
+  }
   
   
   useEffect(() => {
@@ -64,7 +74,6 @@ const Timer = () => {
     console.log("progressValue")
     console.log(progressValue)
     if (isRunning && timeLeft > 0) {
-      // let progressVal = (936 - (936 / selectedTime * (selectedTime - timeLeft)))
       setProgressValue((936 - (936 / selectedTime * (selectedTime - timeLeft + 1))))
       r.style.setProperty('--progress', progressValue)
 
@@ -77,12 +86,34 @@ const Timer = () => {
       setIsRunning(false)
       if (timeLeft <= 0) {
         new Audio(AlarmTone).play()
+        updateTask()
+
+        if (selectedType === "Focus") {
+
+          let runs = 0
+          if (sessionStorage.getItem("runs") === null) {
+            sessionStorage.setItem("runs", 1)
+            runs = 1
+          } else {
+            runs = JSON.parse(sessionStorage.getItem("runs"))
+            runs = runs + 1
+            sessionStorage.setItem("runs", `${runs}`)
+          }
+
+          console.log("modulus:")
+          console.log(runs % 3)
+
+          if (runs % 3 === 0) {
+            handleClickType("Long Break")
+          } else {
+            handleClickType("Short Break")
+          }
+        }
+
         if (selectedType !== "Focus") {
           handleClickType("Focus")
         }
-        if (selectedType === "Focus") {
-          handleClickType("Short Break")
-        }
+       
       }
     }
   }, [timeLeft])

@@ -471,7 +471,9 @@ header .logo-settings svg {
 
 .task-box .task-runs {
   height: 100%;
-  width: 25px;
+  width: 40px;
+  letter-spacing: 4px;
+  font-size: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

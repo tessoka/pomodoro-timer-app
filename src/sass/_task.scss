@@ -55,7 +55,10 @@
   .task-runs {
     // border: 1px solid blue;
     height: 100%;
-    width: 25px;
+    width: 40px;
+
+    letter-spacing: 4px;
+    font-size: 14px;
     // margin-right: 45px;
     @include flexCenter();
   }
