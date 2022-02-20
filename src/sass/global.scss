@@ -15,6 +15,10 @@ body {
 
 #root {
   --progress: 936;
+  --color1: $primaryColor-1;
+  --color2: $primaryColor-3;
+  --color3: $primaryColor-6;
+  --color4: $secondaryColor-1;
 }
 
 .App {
@@ -27,7 +31,7 @@ body {
 
   margin: 0 auto;
 
-  color: $primaryColor-1;
+  color: var(--color1);
 
   display: flex;
   flex-direction: column;

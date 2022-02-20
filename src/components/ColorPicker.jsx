@@ -1,56 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import Form from 'react-bootstrap/Form'
+import { ColorsContext } from '../utilities/Context'
 
 const ColorPicker = () => {
 
-  const [ colorSettings, setColorSettings ] = useState(JSON.parse(localStorage.getItem("colors")))
+  const { colorsSettings, setColorsSettings } = useContext(ColorsContext)
 
-  const [ c1, setC1 ] = useState(colorSettings.color1)
-  const [ c2, setC2 ] = useState(colorSettings.color2)
-  const [ c3, setC3 ] = useState(colorSettings.color3)
-  const [ c4, setC4 ] = useState(colorSettings.color4)
+  const [ c1, setC1 ] = useState(colorsSettings.color1)
+  const [ c2, setC2 ] = useState(colorsSettings.color2)
+  const [ c3, setC3 ] = useState(colorsSettings.color3)
+  const [ c4, setC4 ] = useState(colorsSettings.color4)
 
-  const [ selectedColor, setSelectedColor ] = useState([])
+  const r = document.getElementById('root')
 
 
-
-  const cp = document.querySelector('#cp')
-
-  const handleClickOnColor = (e) => {
-    console.log(e.target.style.backgroundColor)
-    if (e.target.style.backgroundColor === "rgb(241, 245, 251)" || e.target.style.backgroundColor === "rgb(244, 19, 97)") {
-      cp.style.setProperty("color", "rgb(15, 19, 31)")
-      cp.style.setProperty("border-color", "rgb(15, 19, 31)")
-    } else {
-      cp.style.setProperty("color", "rgb(241, 245, 251)")
-      cp.style.setProperty("border-color", "rgb(244, 19, 97)")
-    }
-
-    console.log("c1")
-    console.log(c1)
-
-    let temp = e.target.style.backgroundColor.replace("rgb", "").replaceAll(" ", "").slice(1, e.target.style.backgroundColor.replace("rgb", "").replaceAll(" ", "").length-1).split(",")
-    setSelectedColor({red: parseInt(temp[0]), green: parseInt(temp[1]), blue: parseInt(temp[2])})
-    cp.style.setProperty("background-color", e.target.style.backgroundColor)
+  const handleColorChange1 = (e) => {
+    // console.log(e.target.value)
+    localStorage.setItem("colors", `{"color1": "${e.target.value}", "color2": "#5068a9", "color3": "#0f131f", "color4": "#f41361"}`)
+    // setColorsSettings(JSON.parse(localStorage.getItem("colors")))
+    r.style.setProperty('--color1', e.target.value)
+    setC1(e.target.value)
   }
 
-
-  const handleSetRed = (e) => {
-    console.log(e.target.value)
-    setSelectedColor({red: parseInt(e.target.value), green: selectedColor.green, blue: selectedColor.blue})
-  }
-
-  const handleSetGreen = (e) => {
-    console.log(e.target.value)
-  }
-
-  const handleSetBlue = (e) => {
-    console.log(e.target.value)
-  }
 
   useEffect(() => {
     console.log("selected color:")
-    console.log(selectedColor)
-  }, [selectedColor])
+    console.log(c1)
+  }, [])
 
   return (
     <div id="cp" className="container-colorpicker">
@@ -58,15 +34,16 @@ const ColorPicker = () => {
         <p>ColorPicker</p>
       </div>
       <div className="cp-colors">
-        <p style={{backgroundColor: `${c1}`}} onClick={(e) => handleClickOnColor(e)}></p>
-        <p style={{backgroundColor: `${c2}`}} onClick={(e) => handleClickOnColor(e)}></p>
-        <p style={{backgroundColor: `${c3}`}} onClick={(e) => handleClickOnColor(e)}></p>
-        <p style={{backgroundColor: `${c4}`}} onClick={(e) => handleClickOnColor(e)}></p>
-      </div>
-      <div className="cp-sliders">
-        <p>Red</p><input type="range" min="0" max="255" value={selectedColor.red} onMouseMove={(e) => handleSetRed(e)}/>
-        <p>Green</p><input type="range" min="0" max="255" value={selectedColor.green}  onMouseMove={(e) => handleSetGreen(e)}/>
-        <p>Blue</p><input type="range" min="0" max="255" value={selectedColor.blue}  onMouseMove={(e) => handleSetBlue(e)}/>
+
+        <Form.Control
+          type="color"
+          id="primaryColor-1"
+          defaultValue={`${c1}`}
+          onChange={(e) => handleColorChange1(e)}
+          />
+
+          <input type="color" />
+  
       </div>
     </div>
   )

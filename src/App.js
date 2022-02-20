@@ -1,12 +1,12 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react'
-// import Timer from './components/Timer'
 import Header from './components/Header'
 import Settings from './components/Settings'
 import Tasks from './components/Tasks'
-import ColorPicker from './components/ColorPicker'
-import { SettingsContext, TaskListContext } from './utilities/Context'
+// import ColorPicker from './components/ColorPicker'
+import { SettingsContext, TaskListContext, ColorsContext } from './utilities/Context'
 
 const Timer = lazy(() => import('./components/Timer'))
+const ColorPicker = lazy(() => import('./components/ColorPicker'))
 
 
 
@@ -14,6 +14,7 @@ function App() {
 
   const [ isSettingsOpen, setIsSettingsOpen ] = useState(false)
   const [ currentSettings, setCurrentSettings ] = useState({})
+  const [ colorsSettings, setColorsSettings ] = useState({})
   let [taskList, setTaskList] = useState([])
 
   const handleClickOnSettings = () => {
@@ -27,15 +28,20 @@ function App() {
     setCurrentSettings(JSON.parse(localStorage.getItem("settings")))
     
     if (localStorage.getItem("colors") === null) {
-      localStorage.setItem("colors", `{"color1": "rgb(241, 245, 251)", "color2": "rgb(80, 104, 169)", "color3": "rgb(15, 19, 31)", "color4": "rgb(244, 19, 97)"}`)
+      localStorage.setItem("colors", `{"color1": "#f1f5fb", "color2": "#5068a9", "color3": "#0f131f", "color4": "#f41361"}`)
     }
+    setColorsSettings(JSON.parse(localStorage.getItem("colors")))
+    
   }, [])
 
   return (
+    <ColorsContext.Provider value={{ colorsSettings, setColorsSettings }}>
     <SettingsContext.Provider value={{ currentSettings, setCurrentSettings }}>
     <TaskListContext.Provider value={{ taskList, setTaskList }}>
       <div className="App">
-        {/* <ColorPicker /> */}
+        <Suspense fallback={<div>Loading...</div>}>
+          <ColorPicker />
+        </Suspense>
         <Header handleClickOnSettings={handleClickOnSettings}/>
         <main>
           
@@ -58,6 +64,7 @@ function App() {
       </div>
     </TaskListContext.Provider>
     </SettingsContext.Provider>
+    </ColorsContext.Provider>
   );
 }
 

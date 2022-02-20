@@ -50,14 +50,4 @@
     }
   }
 
-  .cp-sliders {
-    border: 1px solid red;
-
-    @include flexCenter();
-    gap: 15px;
-
-    input {
-      width: 200px;
-    }
-  }
 }
