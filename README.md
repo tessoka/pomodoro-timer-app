@@ -28,13 +28,13 @@ A pomodoro timer app to help you stay focused periodically and stops you from pr
 ## Images
 
 ### Timer
-![pomodoro-timer-app](https://github.com/tessoka/pomodoro-timer-app/blob/32ba07cd454e4c00b48518a838174de2b23adb37/img/timer.jpg)
+![pomodoro-timer-app](./docs/img/timer.jpg)
 
 ### Settings
-![pomodoro-timer-app](https://github.com/tessoka/pomodoro-timer-app/blob/32ba07cd454e4c00b48518a838174de2b23adb37/img/settings.jpg)
+![pomodoro-timer-app](./docs/img/settings.jpg)
 
 ### Tasks
-![pomodoro-timer-app](https://github.com/tessoka/pomodoro-timer-app/blob/32ba07cd454e4c00b48518a838174de2b23adb37/img/tasks.jpg)
+![pomodoro-timer-app](./docs/img/tasks.jpg)
 
 ## Preview
 url...

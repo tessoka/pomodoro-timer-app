@@ -20,6 +20,9 @@ const Timer = () => {
 
   
   const calculateDisplayTime = () => {
+
+    console.log("timeLeft")
+    console.log(timeLeft)
     let mins = Math.floor(timeLeft / 60).toString()
     let secs = Math.floor(timeLeft - (mins * 60)).toString()
     if (mins < 10) mins = "0" + mins.toString()
