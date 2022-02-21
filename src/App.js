@@ -2,12 +2,12 @@ import React, { useState, useEffect, Suspense, lazy } from 'react'
 import Header from './components/Header'
 import Settings from './components/Settings'
 import Tasks from './components/Tasks'
+import ColorPicker from './components/ColorPicker'
 import { SettingsContext, TaskListContext, ColorsContext, FontContext } from './utilities/Context'
 import { ReactComponent as ColorLogo } from './svg/color-palette-outline.svg'
 
 
 const Timer = lazy(() => import('./components/Timer'))
-const ColorPicker = lazy(() => import('./components/ColorPicker'))
 
 
 
@@ -86,9 +86,7 @@ function App() {
         </div>
         {
           isColorPickerOpen &&
-          <Suspense fallback={<div>Loading...</div>}>
             <ColorPicker />
-          </Suspense>
         }
         <Header handleClickOnSettings={handleClickOnSettings}/>
         <main>

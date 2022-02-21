@@ -5,7 +5,7 @@ import AlarmTone from '../mp3/never.mp3'
 
 const Timer = () => {
 
-  const { currentSettings, setCurrentSettings } = useContext(SettingsContext)
+  const { currentSettings } = useContext(SettingsContext)
   let { taskList, setTaskList } = useContext(TaskListContext)
 
   const [ isRunning, setIsRunning ] = useState(false)
@@ -24,7 +24,6 @@ const Timer = () => {
     let secs = Math.floor(timeLeft - (mins * 60)).toString()
     if (mins < 10) mins = "0" + mins.toString()
     if (secs < 10) secs = "0" + secs.toString()
-    // console.log(displayTime)
     setRefreshDisplayTime(!refreshDisplayTime)
     setDisplayTime({mins, secs})
     document.title = mins + ":" + secs + " - " + selectedType

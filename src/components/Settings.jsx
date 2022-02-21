@@ -23,7 +23,7 @@ const Settings = () => {
 
   const setNewLocalStoreData = () => {
     localStorage.setItem("settingsTime", `{"workTime": ${workTime}, "shortBreakTime": ${shortBreakTime}, "longBreakTime": ${longBreakTime}, "rounds": ${rounds}}`)
-    setCurrentSettings(JSON.parse(localStorage.getItem("settings")))
+    setCurrentSettings(JSON.parse(localStorage.getItem("settingsTime")))
   }
 
   const handleClickWork = (e) => {
