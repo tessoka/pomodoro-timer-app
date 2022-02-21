@@ -63,6 +63,10 @@ const ColorPicker = () => {
     setC4(colorsSettings.color4)
   }
 
+  const handleSelectedFont = (e) => {
+    document.body.style.setProperty("font-family", e.target.innerText)
+  }
+
 
   return (
     <div id="cp" className="container-colorpicker">
@@ -79,9 +83,11 @@ const ColorPicker = () => {
       <div className="dropdown-fonts">
         <button className="btn btn-wide">Select Font</button>
         <div className="dropdown-content">
-          <div className="dropdown-element">Link 1</div>
-          <div className="dropdown-element">Link 2</div>
-          <div className="dropdown-element">Link 3</div>
+          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Montserrat</div>
+          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Red Hat Mono</div>
+          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Roboto Mono</div>
+          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Space Grotesk</div>
+          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Ubuntu Mono</div>
         </div>
       </div>
     </div>
