@@ -55,53 +55,7 @@ main {
   }
 }
 
-.container-mid-top {
-  height: 75px;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-
-  & button {
-    background-color: rgba(var(--color1-rgb), .2);
-    border-radius: 5px;
-    width: 125px;
-    height: 30px;
-
-    transition: all .3s ease;
-    
-    &:hover {
-      background-color: var(--color4);
-      color: var(--color3);
-    }
-    
-    &:disabled {
-      background-color: rgba(var(--color1-rgb), .05);
-      color: rgba(var(--color1-rgb), .2);
-      cursor: default;
-    }
-  }
-}
-
-.container-mid-mid {
-  // border: 1px solid gold;
-  flex: 1;
-  width: 100%;
-  
-  @include flexCenter();
-}
-
-.container-mid-bot {
-  // border: 1px solid red;
-  height: 75px;
-  width: 100%;
-  
-  @include flexCenter();
-}
-
-
+// SCROLLBAR SETTINGS
 /* width */
 ::-webkit-scrollbar {
   width: 6px;

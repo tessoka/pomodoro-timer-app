@@ -1,0 +1,53 @@
+// Default button
+.btn {
+  background-color: var(--color1);
+
+  width: 125px;
+  padding: 10px 15px;
+
+  color: var(--color3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: var(--color4);
+  }
+}
+
+// Small button in settings
+.btn-small {
+  background-color: var(--color1);
+  border-radius: 50%;
+
+  height: 40px;
+  width: 40px;
+
+  font-size: 32px;
+  color: var(--color3);
+
+  &:hover {
+    background-color: var(--color4);
+
+  }
+}
+
+// Button in timer
+.btn-timer_type {
+  background-color: rgba(var(--color1-rgb), .2);
+  border-radius: 5px;
+  width: 125px;
+  height: 30px;
+
+  transition: all .3s ease;
+  
+  &:hover {
+    background-color: var(--color4);
+    color: var(--color3);
+  }
+  
+  &:disabled {
+    background-color: rgba(var(--color1-rgb), .05);
+    color: rgba(var(--color1-rgb), .2);
+    cursor: default;
+  }
+}
