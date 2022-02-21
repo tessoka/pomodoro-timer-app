@@ -1,10 +1,18 @@
-@import "./variables";
-@import "./mixins";
-@import "./reset";
-@import "./global";
-@import "./header";
-@import "./settings";
-@import "./tasks";
-@import "./task";
-@import "./timer";
-@import "./colorpicker";
+// Utility files
+@import "./utils/variables";
+@import "./utils/mixins";
+
+// Base files
+@import "./base/reset";
+@import "./base/global";
+
+// Module files
+@import "./modules/Header.module";
+@import "./modules/Settings.module";
+@import "./modules/Tasks.module";
+@import "./modules/Task.module";
+@import "./modules/Timer.module";
+@import "./modules/ColorPicker.module";
+
+// Component files
+@import "./components/buttons";

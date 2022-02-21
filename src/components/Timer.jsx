@@ -5,7 +5,7 @@ import AlarmTone from '../mp3/never.mp3'
 
 const Timer = () => {
 
-  const { currentSettings, setCurrentSettings } = useContext(SettingsContext)
+  const { currentSettings } = useContext(SettingsContext)
   let { taskList, setTaskList } = useContext(TaskListContext)
 
   const [ isRunning, setIsRunning ] = useState(false)
@@ -24,7 +24,6 @@ const Timer = () => {
     let secs = Math.floor(timeLeft - (mins * 60)).toString()
     if (mins < 10) mins = "0" + mins.toString()
     if (secs < 10) secs = "0" + secs.toString()
-    // console.log(displayTime)
     setRefreshDisplayTime(!refreshDisplayTime)
     setDisplayTime({mins, secs})
     document.title = mins + ":" + secs + " - " + selectedType
@@ -95,8 +94,6 @@ const Timer = () => {
             sessionStorage.setItem("runs", `${runs}`)
           }
 
-          console.log("modulus:")
-          console.log(runs % 3)
 
           if (runs % 3 === 0) {
             handleClickType("Long Break")
@@ -122,9 +119,9 @@ const Timer = () => {
   return (
     <div className="container-mid">
       <div className="container-mid-top">
-        <button disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Focus</button>
-        <button disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Short Break</button>
-        <button disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Long Break</button>
+        <button className="btn-timer_type" disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Focus</button>
+        <button className="btn-timer_type" disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Short Break</button>
+        <button className="btn-timer_type" disabled={isRunning} onClick={(e) => handleClickType(e.target.innerText)}>Long Break</button>
       </div>
       <div className="container-mid-mid">
         <div className="timer-progressbar">

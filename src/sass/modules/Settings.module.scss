@@ -1,0 +1,38 @@
+.modal-settings {
+ 
+  p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  &> div > div {
+    width: 250px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &> div {
+      @include flexCenter();
+      gap: 5px;
+
+      p {
+        font-size: 12px;
+      }
+
+      .val {
+        // border: 1px solid var(--color3);
+        // background-color: $primaryColor-4;
+        border: 1px solid rgba(var(--color1-rgb), .5);
+        background-color: rgba(var(--color3-rgb), .5);
+        border-radius: 5px;
+        width: 70px;
+        height: 25px;
+        @include flexCenter();
+      
+        letter-spacing: 1px;
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+* {
+  &::-moz-selection {
+    background: var(--color4);
+  }
+  &::selection {
+    background: var(--color4);
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  
+  --color1: $primaryColor-1;
+  --color2: $primaryColor-3;
+  --color3: $primaryColor-6;
+  --color4: $secondaryColor-1;
+
+  --color1-rgb: 0;
+  --color2-rgb: 0;
+  --color3-rgb: 0;
+  --color4-rgb: 0;
+
+  background-color: var(--color1);
+}
+
+#root {
+  --progress: 936;
+}
+
+.App {
+  min-height: 100vh;
+  height: 100vh;
+  max-width: 600px;
+  min-width: 360px;
+
+  margin: 0 auto;
+
+  color: rgb(var(--color1-rgb));
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+main {
+  position: relative;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .container-middle {
+    background-image: linear-gradient(120deg, var(--color3) 10%, var(--color2) 60%);
+    height: 50vh;
+  }
+}
+
+// SCROLLBAR SETTINGS
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color1-rgb); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--color2-rgb), .75); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--color4-rgb), .8); 
+}
+
+

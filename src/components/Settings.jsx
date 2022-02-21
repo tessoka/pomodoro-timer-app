@@ -22,8 +22,8 @@ const Settings = () => {
   }, [workTime, shortBreakTime, longBreakTime, rounds])
 
   const setNewLocalStoreData = () => {
-    localStorage.setItem("settings", `{"workTime": ${workTime}, "shortBreakTime": ${shortBreakTime}, "longBreakTime": ${longBreakTime}, "rounds": ${rounds}}`)
-    setCurrentSettings(JSON.parse(localStorage.getItem("settings")))
+    localStorage.setItem("settingsTime", `{"workTime": ${workTime}, "shortBreakTime": ${shortBreakTime}, "longBreakTime": ${longBreakTime}, "rounds": ${rounds}}`)
+    setCurrentSettings(JSON.parse(localStorage.getItem("settingsTime")))
   }
 
   const handleClickWork = (e) => {
@@ -65,36 +65,36 @@ const Settings = () => {
       </div>
       <div className="container-mid-mid">
         <div className="box-work">
-          <button onClick={(e) => handleClickWork(e)}>-</button>
+          <button className="btn-small" onClick={(e) => handleClickWork(e)}>-</button>
           <div className="box-mid">
             <p>Focus</p>
             <div className="val">{workTime}:00</div>
           </div>
-          <button onClick={(e) => handleClickWork(e)}>+</button>
+          <button className="btn-small" onClick={(e) => handleClickWork(e)}>+</button>
         </div>
         <div className="box-sbreak">
-          <button onClick={(e) => handleClickShortBreak(e)}>-</button>
+          <button className="btn-small" onClick={(e) => handleClickShortBreak(e)}>-</button>
           <div className="box-mid">
             <p>Short Break</p>
             <div className="val">{shortBreakTime}:00</div>
           </div>
-          <button onClick={(e) => handleClickShortBreak(e)}>+</button>
+          <button className="btn-small" onClick={(e) => handleClickShortBreak(e)}>+</button>
         </div>
         <div className="box-lbreak">
-        <button onClick={(e) => handleClickLongBreak(e)}>-</button>
+        <button className="btn-small" onClick={(e) => handleClickLongBreak(e)}>-</button>
           <div className="box-mid">
             <p>Long Break</p>
             <div className="val">{longBreakTime}:00</div>
           </div>
-          <button onClick={(e) => handleClickLongBreak(e)}>+</button>
+          <button className="btn-small" onClick={(e) => handleClickLongBreak(e)}>+</button>
         </div>
         <div className="box-rounds">
-          <button onClick={(e) => handleClickRounds(e)}>-</button>
+          <button className="btn-small" onClick={(e) => handleClickRounds(e)}>-</button>
           <div className="box-mid">
             <p>Rounds</p>
             <div className="val">{rounds}</div>
           </div>
-          <button onClick={(e) => handleClickRounds(e)}>+</button>
+          <button className="btn-small" onClick={(e) => handleClickRounds(e)}>+</button>
         </div>
       </div>
       <div className="container-mid-bot">
