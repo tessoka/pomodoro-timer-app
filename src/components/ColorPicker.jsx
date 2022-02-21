@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import Form from 'react-bootstrap/Form'
 import { ColorsContext } from '../utilities/Context'
+
 
 const ColorPicker = () => {
 
@@ -73,21 +73,23 @@ const ColorPicker = () => {
       <div className="cp-header">
         <p>ColorPicker</p>
       </div>
-      <div className="cp-colors">
-          <input type="color" value={`${c1}`} onChange={(e) => handleColorChange1(e)} />
-          <input type="color" value={`${c2}`} onChange={(e) => handleColorChange2(e)} />
-          <input type="color" value={`${c3}`} onChange={(e) => handleColorChange3(e)} />
-          <input type="color" value={`${c4}`} onChange={(e) => handleColorChange4(e)} />
-      </div>
-      <button className="btn btn-wide" onClick={handleClickOnResetColors}>Reset Colors</button>
-      <div className="dropdown-fonts">
-        <button className="btn btn-wide">Select Font</button>
-        <div className="dropdown-content">
-          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Montserrat</div>
-          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Red Hat Mono</div>
-          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Roboto Mono</div>
-          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Space Grotesk</div>
-          <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Ubuntu Mono</div>
+      <div className="cp-box">
+        <div className="cp-colors">
+            <input type="color" value={`${c1}`} onChange={(e) => handleColorChange1(e)} />
+            <input type="color" value={`${c2}`} onChange={(e) => handleColorChange2(e)} />
+            <input type="color" value={`${c3}`} onChange={(e) => handleColorChange3(e)} />
+            <input type="color" value={`${c4}`} onChange={(e) => handleColorChange4(e)} />
+        </div>
+        <button className="btn btn-wide" onClick={handleClickOnResetColors}>Reset Colors</button>
+        <div className="dropdown-fonts">
+          <button className="btn btn-wide">Select Font</button>
+          <div className="dropdown-content">
+            <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Montserrat</div>
+            <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Red Hat Mono</div>
+            <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Roboto Mono</div>
+            <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Space Grotesk</div>
+            <div className="dropdown-element" onClick={(e) => handleSelectedFont(e)}>Ubuntu Mono</div>
+          </div>
         </div>
       </div>
     </div>
