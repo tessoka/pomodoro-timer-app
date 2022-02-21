@@ -4,7 +4,7 @@ import { ColorsContext } from '../utilities/Context'
 
 const ColorPicker = () => {
 
-  const { colorsSettings } = useContext(ColorsContext)
+  const { colorsSettings, setColorsSettings } = useContext(ColorsContext)
 
   const [ c1, setC1 ] = useState(colorsSettings.color1)
   const [ c2, setC2 ] = useState(colorsSettings.color2)
@@ -54,6 +54,15 @@ const ColorPicker = () => {
     setC4(e.target.value)
   }
 
+  const handleClickOnResetColors = () => {
+    localStorage.setItem("colors", `{"color1": "#f1f5fb", "color2": "#5068a9", "color3": "#0f131f", "color4": "#f41361"}`)
+    setColorsSettings(JSON.parse(localStorage.getItem("colors")))
+    setC1(colorsSettings.color1)
+    setC2(colorsSettings.color2)
+    setC3(colorsSettings.color3)
+    setC4(colorsSettings.color4)
+  }
+
 
   return (
     <div id="cp" className="container-colorpicker">
@@ -61,18 +70,19 @@ const ColorPicker = () => {
         <p>ColorPicker</p>
       </div>
       <div className="cp-colors">
-
-        <Form.Control
-          type="color"
-          id="primaryColor-1"
-          defaultValue={`${c1}`}
-          onChange={(e) => handleColorChange1(e)}
-          />
-
+          <input type="color" value={`${c1}`} onChange={(e) => handleColorChange1(e)} />
           <input type="color" value={`${c2}`} onChange={(e) => handleColorChange2(e)} />
           <input type="color" value={`${c3}`} onChange={(e) => handleColorChange3(e)} />
           <input type="color" value={`${c4}`} onChange={(e) => handleColorChange4(e)} />
-  
+      </div>
+      <button className="btn btn-wide" onClick={handleClickOnResetColors}>Reset Colors</button>
+      <div className="dropdown-fonts">
+        <button className="btn btn-wide">Select Font</button>
+        <div className="dropdown-content">
+          <div className="dropdown-element">Link 1</div>
+          <div className="dropdown-element">Link 2</div>
+          <div className="dropdown-element">Link 3</div>
+        </div>
       </div>
     </div>
   )

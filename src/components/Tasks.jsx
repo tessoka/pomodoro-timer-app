@@ -29,14 +29,12 @@ const Tasks = () => {
 
   const deleteTask = (task) => {
     taskList = taskList.filter(taskObj => taskObj !== task)
-    console.log("del was kicked off")
     updateTask()
   }
 
   const activateTask = (task) => {
     if (taskList.length > 1) taskList.forEach(taskObj => taskObj.isActive = false)
     task.isActive = true
-    console.log("activate was kicked off")
     updateTask()
   }
 
@@ -46,10 +44,6 @@ const Tasks = () => {
       setTaskList(JSON.parse(localStorage.getItem("taskList")))
     }
   }, [])
-
-  useEffect(() => {
-    console.log(taskList)
-  }, [taskList])
 
 
   return (
