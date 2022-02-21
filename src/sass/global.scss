@@ -1,29 +1,32 @@
 * {
   &::-moz-selection {
-    background: $secondaryColor-1;
+    background: var(--color4);
   }
   &::selection {
-    background: $secondaryColor-1;
+    background: var(--color4);
   }
 }
 
 body {
-  // font-family: 'Cousine', monospace;
   font-family: 'Montserrat', sans-serif;
-  background-color: $primaryColor-1;
-}
-
-#root {
-  --progress: 936;
   --color1: $primaryColor-1;
   --color2: $primaryColor-3;
   --color3: $primaryColor-6;
   --color4: $secondaryColor-1;
+
+  --color1-rgb: 0;
+  --color2-rgb: 0;
+  --color3-rgb: 0;
+  --color4-rgb: 0;
+
+  background-color: var(--color1);
 }
 
-.App {
-  // border: 1px solid purple;
-  
+#root {
+  --progress: 936;
+}
+
+.App {  
   min-height: 100vh;
   height: 100vh;
   max-width: 600px;
@@ -31,7 +34,7 @@ body {
 
   margin: 0 auto;
 
-  color: var(--color1);
+  color: rgb(var(--color1-rgb));
 
   display: flex;
   flex-direction: column;
@@ -39,7 +42,6 @@ body {
 }
 
 main {
-  // border: 1px solid steelblue;
   position: relative;
   height: 100%;
 
@@ -48,29 +50,27 @@ main {
   gap: 10px;
 
   .container-middle {
-    // border: 1px solid $secondaryColor-1;
-    background: linear-gradient(120deg, $primaryColor-6 10%, $primaryColor-3 60%);
+    background-image: linear-gradient(120deg, var(--color3) 10%, var(--color2) 60%);
     height: 50vh;
   }
 }
 
 .btn {
-  background-color: $primaryColor-1;
+  background-color: var(--color1);
 
   width: 125px;
   padding: 10px 15px;
 
-  color: $primaryColor-6;
+  color: var(--color3);
   text-transform: uppercase;
   letter-spacing: 2px;
 
   &:hover {
-    background-color: $secondaryColor-1;
+    background-color: var(--color4);
   }
 }
 
 .container-mid-top {
-  // border: 1px solid greenyellow;
   height: 75px;
   width: 100%;
 
@@ -80,7 +80,7 @@ main {
   gap: 25px;
 
   & button {
-    background-color: rgba($primaryColor-1, .2);
+    background-color: rgba(var(--color1-rgb), .2);
     border-radius: 5px;
     width: 125px;
     height: 30px;
@@ -88,17 +88,13 @@ main {
     transition: all .3s ease;
     
     &:hover {
-      background-color: $secondaryColor-1;
-      color: $primaryColor-6;
+      background-color: var(--color4);
+      color: var(--color3);
     }
     
-    // &:focus {
-    //   border: 1px solid $secondaryColor-1;
-    // }
-    
     &:disabled {
-      background-color: rgba($primaryColor-1, .05);
-      color: rgba($primaryColor-1, .2);
+      background-color: rgba(var(--color1-rgb), .05);
+      color: rgba(var(--color1-rgb), .2);
       cursor: default;
     }
   }
@@ -128,17 +124,17 @@ main {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $primaryColor-1; 
+  background: var(--color1-rgb); 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba($primaryColor-3, .75); 
+  background: rgba(var(--color2-rgb), .75); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba($secondaryColor-1, .8); 
+  background: rgba(var(--color4-rgb), .8); 
 }
 
 

@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import Task from './Task'
 import { SettingsContext, TaskListContext } from '../utilities/Context'
 
 const Tasks = () => {
   
-  const { currentSettings, setCurrentSettings } = useContext(SettingsContext)
+  const { currentSettings } = useContext(SettingsContext)
   let { taskList, setTaskList } = useContext(TaskListContext)
 
   const handleClickAdd = () => {

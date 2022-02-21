@@ -1,13 +1,11 @@
 .modal-settings {
  
   p {
-    // font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
   
   &> div > div {
-    // border: 1px solid red;
     width: 250px;
     height: 60px;
     display: flex;
@@ -15,7 +13,6 @@
     justify-content: space-between;
 
     &> div {
-      // border: 1px solid gold;
       @include flexCenter();
       gap: 5px;
 
@@ -24,9 +21,10 @@
       }
 
       .val {
-        border: 1px solid $primaryColor-6;
-        // border: 1px solid $secondaryColor-1;
-        background-color: $primaryColor-4;
+        // border: 1px solid var(--color3);
+        // background-color: $primaryColor-4;
+        border: 1px solid rgba(var(--color1-rgb), .5);
+        background-color: rgba(var(--color3-rgb), .5);
         border-radius: 5px;
         width: 70px;
         height: 25px;
@@ -39,19 +37,17 @@
 
 
     button {
-      background-color: $primaryColor-1;
-      // border: 1px solid purple;
+      background-color: var(--color1);
       border-radius: 50%;
 
       height: 40px;
       width: 40px;
 
       font-size: 32px;
-      // line-height: 48px;
-      color: $primaryColor-6;
+      color: var(--color3);
 
       &:hover {
-        background-color: $secondaryColor-1;
+        background-color: var(--color4);
 
       }
     }

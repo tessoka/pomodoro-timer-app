@@ -21,6 +21,7 @@ function App() {
     setIsSettingsOpen(!isSettingsOpen)
   }
 
+// ----- CHECK LOCAL STORE & SET IF FIRST TIME + SET useContexts -----
   useEffect(() => {
     if (localStorage.getItem("settings") === null) {
       localStorage.setItem("settings", `{"workTime": 25, "shortBreakTime": 5, "longBreakTime": 15, "rounds": 3}`)
@@ -31,8 +32,32 @@ function App() {
       localStorage.setItem("colors", `{"color1": "#f1f5fb", "color2": "#5068a9", "color3": "#0f131f", "color4": "#f41361"}`)
     }
     setColorsSettings(JSON.parse(localStorage.getItem("colors")))
-    
+
   }, [])
+
+  
+  // ----- APPLY COLORS IN CSS ON CHANGE -----
+  useEffect(() => {
+    if (colorsSettings.color1 !== undefined) {
+      document.body.style.setProperty('--color1', colorsSettings.color1)
+      document.body.style.setProperty('--color2', colorsSettings.color2)
+      document.body.style.setProperty('--color3', colorsSettings.color3)
+      document.body.style.setProperty('--color4', colorsSettings.color4)
+      document.body.style.setProperty('--color1-rgb', hexToRgb(colorsSettings.color1))
+      document.body.style.setProperty('--color2-rgb', hexToRgb(colorsSettings.color2))
+      document.body.style.setProperty('--color3-rgb', hexToRgb(colorsSettings.color3))
+      document.body.style.setProperty('--color4-rgb', hexToRgb(colorsSettings.color4))
+    }
+  }, [colorsSettings])
+
+  const hexToRgb = (val) => {
+    const color = val
+    const r = parseInt(color.substr(1,2), 16)
+    const g = parseInt(color.substr(3,2), 16)
+    const b = parseInt(color.substr(5,2), 16)
+    return `${r}, ${g}, ${b}`
+  }
+  
 
   return (
     <ColorsContext.Provider value={{ colorsSettings, setColorsSettings }}>
