@@ -4,6 +4,34 @@
   @include flexCenter();
   justify-content: space-around;
 
+  
+  .container-mid-top {
+    height: 75px;
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .container-mid-mid {
+    // border: 1px solid gold;
+    flex: 1;
+    width: 100%;
+    
+    @include flexCenter();
+  }
+  
+  .container-mid-bot {
+    // border: 1px solid red;
+    height: 75px;
+    width: 100%;
+    
+    @include flexCenter();
+  }
+  
+
   .timer-progressbar {
     border: 2px dotted var(--color1);
     border-radius: 50%;
