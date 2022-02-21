@@ -64,6 +64,7 @@ const ColorPicker = () => {
   }
 
   const handleSelectedFont = (e) => {
+    localStorage.setItem("settingFont", `{"font": "${e.target.innerText}"}`)
     document.body.style.setProperty("font-family", e.target.innerText)
   }
 
