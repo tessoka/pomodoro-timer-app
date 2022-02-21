@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react'
-import { ColorsContext } from '../utilities/Context'
+import { ColorsContext, FontContext } from '../utilities/Context'
 
 
 const ColorPicker = () => {
 
   const { colorsSettings, setColorsSettings } = useContext(ColorsContext)
+  const { fontSettings, setFontSettings  } = useContext(FontContext)
 
   const [ c1, setC1 ] = useState(colorsSettings.color1)
   const [ c2, setC2 ] = useState(colorsSettings.color2)
@@ -61,11 +62,14 @@ const ColorPicker = () => {
     setC2(colorsSettings.color2)
     setC3(colorsSettings.color3)
     setC4(colorsSettings.color4)
+    document.body.style.setProperty("font-family", fontSettings.font)
+    console.log(fontSettings)
   }
 
   const handleSelectedFont = (e) => {
     localStorage.setItem("settingFont", `{"font": "${e.target.innerText}"}`)
     document.body.style.setProperty("font-family", e.target.innerText)
+    setFontSettings(JSON.parse(localStorage.getItem("settingFont")))
   }
 
 
