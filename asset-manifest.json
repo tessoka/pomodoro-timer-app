@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/pomodoro-timer-app/static/css/main.34771472.css",
-    "main.js": "/pomodoro-timer-app/static/js/main.b0c7cc37.js",
-    "static/js/66.b97ca80f.chunk.js": "/pomodoro-timer-app/static/js/66.b97ca80f.chunk.js",
+    "main.css": "/pomodoro-timer-app/static/css/main.87ebd8cf.css",
+    "main.js": "/pomodoro-timer-app/static/js/main.3dd20cb2.js",
+    "static/js/66.b1bdd7ee.chunk.js": "/pomodoro-timer-app/static/js/66.b1bdd7ee.chunk.js",
     "static/media/never.mp3": "/pomodoro-timer-app/static/media/never.2b93b6e00468964dce5e.mp3",
+    "static/media/settings-outline.svg": "/pomodoro-timer-app/static/media/settings-outline.f581dc191465676599daee90d2c1bf8a.svg",
+    "static/media/rocket.svg": "/pomodoro-timer-app/static/media/rocket.87118cb0b162c0390a7898e5f13cc22e.svg",
     "index.html": "/pomodoro-timer-app/index.html",
-    "main.34771472.css.map": "/pomodoro-timer-app/static/css/main.34771472.css.map",
-    "main.b0c7cc37.js.map": "/pomodoro-timer-app/static/js/main.b0c7cc37.js.map",
-    "66.b97ca80f.chunk.js.map": "/pomodoro-timer-app/static/js/66.b97ca80f.chunk.js.map"
+    "static/media/color-palette-outline.svg": "/pomodoro-timer-app/static/media/color-palette-outline.a66e64f19dd79927d34bf68ba706b027.svg",
+    "static/media/close.svg": "/pomodoro-timer-app/static/media/close.49ba6b16c4e11db067288bd382719aa4.svg",
+    "main.87ebd8cf.css.map": "/pomodoro-timer-app/static/css/main.87ebd8cf.css.map",
+    "main.3dd20cb2.js.map": "/pomodoro-timer-app/static/js/main.3dd20cb2.js.map",
+    "66.b1bdd7ee.chunk.js.map": "/pomodoro-timer-app/static/js/66.b1bdd7ee.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34771472.css",
-    "static/js/main.b0c7cc37.js"
+    "static/css/main.87ebd8cf.css",
+    "static/js/main.3dd20cb2.js"
   ]
 }
